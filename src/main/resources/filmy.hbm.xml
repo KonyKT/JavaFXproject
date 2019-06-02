@@ -1,0 +1,152 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.kony">
+    <class name="Filmy" table="filmy">
+        <id name="id_filmy" type="int" column="id_filmy">
+            <generator class="identity"/>
+        </id>
+        <property name="tytul">
+            <column name="tytul"/>
+        </property>
+        <property name="data_premiery" type="date">
+            <column name="data_premiery"/>
+        </property>
+        <property name="id_rezyser" type = "int">
+            <column name="id_rezyser"/>
+        </property>
+    </class>
+    <class name="Rezyser" table="rezyser">
+        <id name="id_rezyser" type="int" column="id_rezyser">
+            <generator class="identity"/>
+        </id>
+        <property name="imie">
+            <column name="imie"/>
+        </property>
+        <property name="nazwisko">
+            <column name="nazwisko"/>
+        </property>
+        <property name="data_urodzin" type="date">
+            <column name="data_urodzin"/>
+        </property>
+        <property name="miejsce_urodzenia">
+            <column name="miejsce_urodzenia"/>
+        </property>
+    </class>
+    <class name="Aktor" table="aktor">
+        <id name="id_aktor" type="int" column="id_aktor">
+            <generator class="identity"/>
+        </id>
+        <property name="imie">
+            <column name="imie"/>
+        </property>
+        <property name="nazwisko">
+            <column name="nazwisko"/>
+        </property>
+        <property name="data_urodzin" type="date">
+            <column name="data_urodzin"/>
+        </property>
+        <property name="miejsce_urodzenia">
+            <column name="miejsce_urodzenia"/>
+        </property>
+    </class>
+    <class name="Gatunek" table="gatunek">
+        <id name="id_gatunek" type="int" column="id_gatunek">
+            <generator class="identity"/>
+        </id>
+        <property name="gatunek">
+            <column name="gatunek"/>
+        </property>
+    </class>
+    <class name="Uzytkownik" table="uzytkownik">
+        <id name="id_uzytkownik" type="int" column="id_uzytkownik">
+            <generator class="identity"/>
+        </id>
+        <property name="login">
+            <column name="login"/>
+        </property>
+        <property name="haslo">
+            <column name="haslo"/>
+        </property>
+        <property name="mode">
+            <column name="mode"/>
+        </property>
+    </class>
+    <class name="Moderator" table="moderator">
+        <id name="id_moderator" type="int" column="id_moderator">
+            <generator class="identity"/>
+        </id>
+        <property name="login">
+            <column name="login"/>
+        </property>
+        <property name="haslo">
+            <column name="haslo"/>
+        </property>
+
+    </class>
+    <class name="Admin" table="admin">
+        <id name="id_admin" type="int" column="id_admin">
+            <generator class="identity"/>
+        </id>
+        <property name="login">
+            <column name="login"/>
+        </property>
+        <property name="haslo">
+            <column name="haslo"/>
+        </property>
+
+    </class>
+    <class name="Ocena_aktora" table="ocena_aktora">
+        <id name="id_ocena_aktora" type="int" column="id_ocena_aktora">
+            <generator class="identity"/>
+        </id>
+        <property name="id_aktor" type = "int">
+            <column name="id_aktor"/>
+        </property>
+        <property name="id_uzytkownik" type = "int">
+            <column name="id_uzytkownik"/>
+        </property>
+        <property name="ocena_aktora">
+            <column name="ocena_aktora"/>
+        </property>
+
+    </class>
+    <class name="Ocena_filmu" table="ocena_filmu">
+        <id name="id_ocena_filmu" type="int" column="id_ocena_filmu">
+            <generator class="identity"/>
+        </id>
+        <property name="id_filmy" type = "int">
+            <column name="id_filmy"/>
+        </property>
+        <property name="id_uzytkownik" type = "int">
+            <column name="id_uzytkownik"/>
+        </property>
+        <property name="ocena_filmu">
+            <column name="ocena_filmu"/>
+        </property>
+    </class>
+    <class name="Filmy_has_gatunek" table="filmy_has_gatunek">
+        <id name="id_filmy_has_gatunek" type="int" column="id_filmy_has_gatunek">
+            <generator class="identity"/>
+        </id>
+        <property name="id_filmy" type = "int">
+            <column name="id_filmy"/>
+        </property>
+        <property name="id_gatunek" type = "int">
+            <column name="id_gatunek"/>
+        </property>
+    </class>
+    <class name="Filmy_has_aktor" table="filmy_has_aktor">
+        <id name="id_filmy_has_aktor" type="int" column="id_filmy_has_aktor">
+            <generator class="identity"/>
+        </id>
+        <property name="id_filmy" type = "int">
+            <column name="id_filmy"/>
+        </property>
+        <property name="id_aktor" type = "int">
+            <column name="id_aktor"/>
+        </property>
+    </class>
+</hibernate-mapping>

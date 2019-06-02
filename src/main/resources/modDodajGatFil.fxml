@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="xd" stylesheets="@CSS/sample.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kony.ModDodajGatFil">
+    <left>
+        <VBox prefHeight="354.0" prefWidth="156.0" spacing="20.0" stylesheets="@CSS/sample.css" BorderPane.alignment="CENTER">
+            <BorderPane.margin>
+                <Insets bottom="10.0" left="20.0" right="10.0" top="10.0" />
+            </BorderPane.margin>
+            <children>
+                <Button fx:id="modDodajAkt" layoutX="10.0" layoutY="190.0" mnemonicParsing="false" onAction="#modDodajAkt" prefHeight="25.0" prefWidth="148.0" text="Dodaj Aktora" />
+                <Button fx:id="modDodajFilm" layoutX="10.0" layoutY="145.0" mnemonicParsing="false" onAction="#modDodajFilm" prefHeight="25.0" prefWidth="148.0" text="Dodaj Film" />
+                <Button fx:id="modDodajGat" mnemonicParsing="false" onAction="#modDodajGat" prefHeight="25.0" prefWidth="148.0" text="Dodaj gatunek" />
+                <Button fx:id="modDodajRez" layoutX="10.0" layoutY="100.0" mnemonicParsing="false" onAction="#modDodajRez" prefHeight="25.0" prefWidth="148.0" text="Dodaj rezysera" />
+                <Button fx:id="modDodajGatFil" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#modDodajGatFil" prefHeight="25.0" prefWidth="148.0" text="Dodaj gatunek do filmu" />
+                <Button fx:id="modDodajAktFil" layoutX="10.0" layoutY="55.0" mnemonicParsing="false" onAction="#modDodajAktFil" prefHeight="25.0" prefWidth="148.0" text="Dodaj aktora do filmu" />
+            </children>
+        </VBox>
+    </left>
+    <top>
+        <Text fx:id="witaj" strokeType="OUTSIDE" strokeWidth="0.0" BorderPane.alignment="CENTER">
+            <BorderPane.margin>
+                <Insets top="10.0" />
+            </BorderPane.margin>
+        </Text>
+    </top>
+    <center>
+        <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <children>
+                <VBox prefHeight="200.0" prefWidth="100.0">
+                    <children>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="xd" text="Wybierz film:">
+                            <VBox.margin>
+                                <Insets left="20.0" top="20.0" />
+                            </VBox.margin>
+                        </Text>
+                        <Text fill="WHITE" layoutX="20.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="xd" text="Wybierz gatunek:" textAlignment="CENTER" wrappingWidth="81.16015625">
+                            <VBox.margin>
+                                <Insets left="10.0" top="20.0" />
+                            </VBox.margin>
+                        </Text>
+                    </children>
+                </VBox>
+                <VBox prefHeight="374.0" prefWidth="150.0">
+                    <children>
+                  <ChoiceBox fx:id="filmy" prefWidth="150.0">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </ChoiceBox>
+                        <ChoiceBox fx:id="gatunki" prefWidth="150.0">
+                            <VBox.margin>
+                                <Insets top="20.0" />
+                            </VBox.margin>
+                        </ChoiceBox>
+                        <Button mnemonicParsing="false" onAction="#dodaj" text="Dodaj">
+                            <VBox.margin>
+                                <Insets left="80.0" top="20.0" />
+                            </VBox.margin>
+                        </Button>
+                    </children>
+                    <HBox.margin>
+                        <Insets />
+                    </HBox.margin>
+                    <padding>
+                        <Insets top="10.0" />
+                    </padding>
+                </VBox>
+                <VBox prefHeight="200.0" prefWidth="100.0" />
+            </children>
+        </HBox>
+    </center>
+</BorderPane>
